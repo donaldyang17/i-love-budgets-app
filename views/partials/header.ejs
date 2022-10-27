@@ -16,7 +16,7 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top m-2">
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top m-2">
       <div class="container-fluid">
         <a class="navbar-brand text-success" href="/">I love Budgets</a>
         <button
@@ -72,14 +72,15 @@
       </ul> -->
       <div class="justify-content-end">
   <div class="text-center">
-    <h6>Current Balance:</h6>
-    <p class="lead">10000</p>
-    <form action="">
-      <label for="email" class="form-label">Update Balance:</label>
-      <input type="email"
-      id="email"
+      <h6>
+        Current Balance: 10000</h6>
+
+    <p class="lead"></p>
+    <form action="/balances" method="POST" >
+    <input type="text" name="amount"
       placeholder="Balance"
       />
+      <button class="btn btn-outline-success mt-1" type="submit">Update Balance</button>
       </form>
     </div>
     
