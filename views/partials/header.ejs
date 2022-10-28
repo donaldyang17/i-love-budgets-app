@@ -53,13 +53,7 @@
               </div>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Enter Budget Name"
-              aria-label="Search"
-            />
+          <form class="inline my-2 my-lg-0" action="/budgets" method="POST">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
               Create new budget
             </button>
@@ -73,7 +67,7 @@
       <div class="justify-content-end">
   <div class="text-center">
       <h6>
-        Current Balance: 10000</h6>
+        Current Balance: <%= total%></h6>
 
     <p class="lead"></p>
     <form action="/balances" method="POST" >

@@ -7,7 +7,13 @@ module.exports = {
 
 function newBalance(req, res) {
   Balance.find({}, function (err, balances) {
-    res.render("balances/new");
+    let total = 0;
+    for (let balance of balances) {
+      console.log(balance.amount);
+      total += balance.amount;
+    }
+    console.log(total);
+    res.render("balances/new", { total: total });
   });
 }
 
@@ -19,3 +25,11 @@ function create(req, res) {
     res.redirect("/balances/new");
   });
 }
+
+// function newBalance(req, res) {
+//   Balance.find(function (err, balances) {
+//     res.render("balances/new", { balances });
+//   })
+//     .sort({ createdAt: -1 })
+//     .limit(1);
+// }
