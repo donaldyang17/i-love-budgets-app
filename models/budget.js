@@ -5,6 +5,7 @@ const budgetSchema = new Schema(
   {
     name: String,
     description: String,
+    amount: Number,
   },
   { timestamps: true }
 );

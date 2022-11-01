@@ -1,46 +1,22 @@
 <%- include("../partials/header") %>
 </br></br></br></br></br></br></br>
-<thead>
-  <tr>
-    <th>Budget Name:</th>
-    <th>Description:</th>
-  </tr>
-</thead>
-<tbody>
-  <% budgets.forEach(function(b){ %>
-  <tr>
-    <td><%= b.name %></td>
-    <td><%= b.description %></td>
-  </tr>
-  <% }); %>
-</tbody>
+
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
+        <th scope="col">Budget name:</th>
+        <th scope="col">Description:</th>
+        <th scope="col">Balance:</th>
+    </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+        <% budgets.forEach(function(b){ %>
+            <tr>
+              <td><a href="<%=b._id%>"><%= b.name %></a></td>
+              <td><%= b.description %></td>
+              <td>$<%= b.amount %></td>
+            </tr>
+            <% }); %>
     </tbody>
   </table>
 <%- include('../partials/footer') %>
