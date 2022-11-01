@@ -25,11 +25,3 @@ function create(req, res) {
     res.redirect("/balances/new");
   });
 }
-
-// function newBalance(req, res) {
-//   Balance.find(function (err, balances) {
-//     res.render("balances/new", { balances });
-//   })
-//     .sort({ createdAt: -1 })
-//     .limit(1);
-// }

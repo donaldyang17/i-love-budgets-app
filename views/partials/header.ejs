@@ -11,7 +11,7 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="stylesheets/style.css" />
+
     <title>I Love Budgets</title>
   </head>
   <body>
@@ -53,21 +53,18 @@
               </div>
             </li>
           </ul>
-          <form class="inline my-2 my-lg-0" action="/budgets" method="POST">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-              Create new budget
-            </button>
+          <form class=" my-2 my-lg-0">
+            <button class="btn my-2 my-sm-0">
+                <a href="/budgets/new" class="btn btn-outline-success">Create New Budget</a>
+              </button>
           </form>
         </div>
       </div>
-      <!-- <ul class="nav-item">
-        <a class="nav-link" href="/">Current Balance:</a
-        ><a class="text-success text-decoration-none">1000000</a>
-      </ul> -->
+
       <div class="justify-content-end">
   <div class="text-center">
       <h6>
-        Current Balance: <%= total%></h6>
+        Current Balance:</h6>
 
     <p class="lead"></p>
     <form action="/balances" method="POST" >
