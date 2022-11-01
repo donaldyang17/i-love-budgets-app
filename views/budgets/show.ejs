@@ -1,18 +1,35 @@
 <%- include("../partials/header") %>
-</br></br></br></br></br></br></br>
-<table class="table">
+</br></br></br></br></br>
+<table class="table table-borderless">
      <thead>
         <tr>
-            <td>Budget Name:</td>
-            <td>Budget Description:</td>
-            <td>Current Budget:</td>
-
-        </tr>
+            <td><strong>Name:</strong></td>
+            <td><strong>Description:</strong></td>
+            <td><strong>Current Budget:</strong></td>
+            </tr>
     </thead>
     <tbody>
         <td><%= budgets.name %></td>
         <td><%= budgets.description %></td>
         <td>$<%= budgets.amount %></td></tbody>
 </table>
+    <form
+    id="add-review-form"
+    method="POST"
+    action="/"
+    >
+    <label
+    >Item:
+    <input name="Item" type="text" required="True">
 
-<%- include('../partials/footer') %>
+    </input> </label
+    ><br />
+    <label>Category: <input type="text" name="category" required="True" /> </label
+        ><br />
+        <br />
+        <button class="btn btn-outline-success mt-1" type="submit">Add Budget Item</button>
+    </form>
+
+    
+    <%- include('../partials/footer') %>
+    
