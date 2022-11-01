@@ -1,7 +1,36 @@
 <%- include("../partials/header") %>
 </br></br></br></br></br></br></br>
 
-<table class="table">
+<% if (budgets.length) { %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Budget Name</th>
+          <th>Description</th>
+          <th>Budget Amount:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% budgets.forEach(function(b) { %>
+        <tr>
+            <td><a href="<%=b._id%>"><%= b.name %></a></td>
+            <td><%= b.description %></td>
+            <td>$<%= b.amount %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <h5>No Budgets Created Yet.</h5>
+    <% } %>
+
+
+
+
+
+
+
+<!-- <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">Budget name:</th>
@@ -18,5 +47,5 @@
             </tr>
             <% }); %>
     </tbody>
-  </table>
+  </table> -->
 <%- include('../partials/footer') %>

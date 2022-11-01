@@ -1,11 +1,18 @@
 <%- include("../partials/header") %>
 </br></br></br></br></br></br></br>
+<table class="table">
+     <thead>
+        <tr>
+            <td>Budget Name:</td>
+            <td>Budget Description:</td>
+            <td>Current Budget:</td>
 
-
-    <tr>
-      <td><%= budgets.name %></td>
-      <td><%= budgets.description %></td>
-      <td><%= budgets.amount %></td>
-    </tr>
+        </tr>
+    </thead>
+    <tbody>
+        <td><%= budgets.name %></td>
+        <td><%= budgets.description %></td>
+        <td>$<%= budgets.amount %></td></tbody>
+</table>
 
 <%- include('../partials/footer') %>

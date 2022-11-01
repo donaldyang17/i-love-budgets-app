@@ -5,7 +5,7 @@ const budgetSchema = new Schema(
   {
     name: String,
     description: String,
-    amount: Number,
+    amount: { type: Number, min: 1 },
   },
   { timestamps: true }
 );

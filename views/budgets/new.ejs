@@ -4,19 +4,19 @@
 <div class="container-fluid row">
     <form class="my-2 my-lg-0" action="/budgets" method="POST">
         <label class="d-block">Name:
-            <input type="text" name="name">
+            <input type="text" name="name" required="True">
         </label>
         <label class="d-block">Description:
-        <input type="text" name="description"></label>
+        <input type="text" name="description" required="True" ></label>
         <label class="d-block">Starting Budget Amount:
-            <input type="number" name="amount">
+            <input type="number" name="amount" required pattern="[0-9]+">
         </label>
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Create new budget
+            Create New Budget
         </button>
 </form>
 </div>
-<a href="/budgets/index">Show</a>
+
 
 
 
