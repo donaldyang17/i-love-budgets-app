@@ -4,6 +4,7 @@ module.exports = {
   index,
   new: newBudgets,
   create,
+  show,
 };
 
 function index(req, res) {
@@ -23,5 +24,13 @@ function create(req, res) {
     if (err) return res.render("budgets/");
     console.log(budget);
     res.redirect("/budgets/index");
+  });
+}
+
+function show(req, res) {
+  Budget.findById(req.params.id, function (err, budgets) {
+    res.render("budgets/show", {
+      budgets,
+    });
   });
 }

@@ -6,5 +6,5 @@ const budgetsCtrl = require("../controllers/budgets");
 router.post("/", budgetsCtrl.create);
 router.get("/index", budgetsCtrl.index);
 router.get("/new", budgetsCtrl.new);
-
+router.get("/:id", budgetsCtrl.show);
 module.exports = router;
