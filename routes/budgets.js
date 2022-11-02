@@ -6,6 +6,8 @@ const budgetsCtrl = require("../controllers/budgets");
 router.post("/", budgetsCtrl.create);
 router.get("/index", budgetsCtrl.index);
 router.get("/new", budgetsCtrl.new);
+router.delete("/:id/:deleteItem", budgetsCtrl.delete);
 router.get("/:id", budgetsCtrl.show);
 router.post("/:id/addItem", budgetsCtrl.addItem);
+
 module.exports = router;

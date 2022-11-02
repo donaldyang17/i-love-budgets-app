@@ -1,4 +1,5 @@
 const Budget = require("../models/budget");
+// const BudgetItem = require("../models/budget");
 
 module.exports = {
   index,
@@ -6,6 +7,7 @@ module.exports = {
   create,
   show,
   addItem,
+  delete: deleteItem,
 };
 
 function index(req, res) {
@@ -42,5 +44,16 @@ function addItem(req, res) {
     budget.save();
     console.log(budget);
     res.redirect(`/budgets/${req.params.id}`);
+  });
+}
+
+function deleteItem(req, res) {
+  Budget.findById(req.params.id).then((budget) => {
+    let find = budget.budgetItem.findIndex(
+      (object) => object._id == req.params.deleteItem
+    );
+    console.log(find);
+    budget.budgetItem.splice(find, 1);
+    budget.save().then(res.redirect(`/budgets/${req.params.id}`));
   });
 }
