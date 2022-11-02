@@ -17,16 +17,18 @@
 <hr class="bg">
 <div class="container-fluid d-flex justify-content-center">
     <% budgets.budgetItem.forEach( item => { %>
-<div class="row align-items-end">
+    <div class="row align-items-end">
 
     <div class="col bg-light">
-        <h5>
+        <h6>
             <td class=""><%= item.itemName %></td>
             <div class="w-100"></div>
             <%= item.category %>
-            $<%= item.cost  %>
+            <div class="container row justify-content-end">
+                $<%= item.cost  %>
+            </div>
                 <% }) %>
-        </h5>
+        </h6>
     </div>
 </div>
 </div>
