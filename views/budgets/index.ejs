@@ -13,7 +13,7 @@
       <tbody>
         <% budgets.forEach(function(b) { %>
         <tr>
-            <td><a href="<%=b._id%>"><%= b.name %></a></td>
+            <td><a href="/budgets/<%=b._id%>"><%= b.name %></a></td>
             <td><%= b.description %></td>
             <td>$<%= b.amount %></td>
         </tr>

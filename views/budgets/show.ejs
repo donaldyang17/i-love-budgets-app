@@ -34,7 +34,6 @@
 </div>
 <hr>
 <div class="container-fluid d-flex justify-content-end">
-    <!-- Current Budget: <%= budgets.amount - budgets.budgetItem.cost %> -->
     Current Budget: $<%let total = 0 %> <% budgets.budgetItem.forEach(function(item) { %> <% total += 
     item.cost %>
    <% }) %>
