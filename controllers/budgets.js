@@ -5,6 +5,7 @@ module.exports = {
   new: newBudgets,
   create,
   show,
+  addItem,
 };
 
 function index(req, res) {
@@ -32,5 +33,14 @@ function show(req, res) {
     res.render("budgets/show", {
       budgets,
     });
+  });
+}
+
+function addItem(req, res) {
+  Budget.findById(req.params.id, function (err, budget) {
+    budget.budgetItem.push(req.body);
+    budget.save();
+    console.log(budget);
+    res.redirect(`/budgets/${req.params.id}`);
   });
 }

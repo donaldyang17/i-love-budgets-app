@@ -13,22 +13,27 @@
         <td><%= budgets.description %></td>
         <td>$<%= budgets.amount %></td></tbody>
 </table>
-    <form
-    id="add-review-form"
-    method="POST"
-    action="/"
-    >
-    <label
-    >Item:
-    <input name="Item" type="text" required="True">
+<% budgets.budgetItem.forEach( item => { %>
+   <li>
+     <%= item.itemName %>
+       <%= item.category %>
+       <%= item.cost %>
+       <% }) %>
+    </li>
 
-    </input> </label
-    ><br />
-    <label>Category: <input type="text" name="category" required="True" /> </label
-        ><br />
-        <br />
-        <button class="btn btn-outline-success mt-1" type="submit">Add Budget Item</button>
-    </form>
+<div class="container-fluid d-flex justify-content-center">
+<form  id="add-review-form" method="POST"  action="/budgets/<%=budgets._id %>/addItem">
+    <label>Item:
+    <input name="itemName" type="text" required="True">
+    </input> </label>
+    <br />
+    <label>Category: <input type="text" name="category" required="True" /> </label >
+    </br>
+    <label>Cost: <input type="number" name="cost" required="True"/></label>
+    <br /><br />
+    <button class="btn btn-outline-success mt-1" type="submit">Add Budget Item</button>
+</form>
+</div>
 
     
     <%- include('../partials/footer') %>

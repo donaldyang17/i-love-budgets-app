@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const budgetItemSchema = new Schema({
-  item: String,
+  itemName: String,
   category: String,
   cost: Number,
 });
