@@ -13,13 +13,20 @@
         <td><%= budgets.description %></td>
         <td>$<%= budgets.amount %></td></tbody>
 </table>
-<% budgets.budgetItem.forEach( item => { %>
-   <li>
-     <%= item.itemName %>
-       <%= item.category %>
-       <%= item.cost %>
-       <% }) %>
-    </li>
+<hr class="bg">
+<div class="container-fluid d-flex justify-content-center">
+    <% budgets.budgetItem.forEach( item => { %>
+<div class="row align-items-start">
+
+    <div class="col bg-success">
+        <%= item.itemName %>
+        <%= item.category %>
+        $<%= item.cost %>
+        <% }) %>
+    </div>
+</div>
+</div>
+
 
 <div class="container-fluid d-flex justify-content-center">
 <form  id="add-review-form" method="POST"  action="/budgets/<%=budgets._id %>/addItem">
