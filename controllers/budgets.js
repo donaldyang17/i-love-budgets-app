@@ -1,4 +1,3 @@
-const budget = require("../models/budget");
 const Budget = require("../models/budget");
 
 module.exports = {
@@ -61,7 +60,8 @@ function deleteItem(req, res) {
 
 function deleteBudget(req, res) {
   console.log(req.params.id);
-  console.log(budget);
-  Budget.findById(req.params.id);
-  res.redirect("/budgets/index");
+  console.log(Budget);
+  Budget.findByIdAndDelete(req.params.id, function () {
+    res.redirect("/budgets/index");
+  });
 }

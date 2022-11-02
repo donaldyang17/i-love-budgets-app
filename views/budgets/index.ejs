@@ -17,7 +17,7 @@
             <td><%= b.description %></td>
             <td>$<%= b.amount %></td>
             <td><form action="/budgets/<%=b._id%>?_method=DELETE" class="delete-form" method="POST">
-                <button class="btn btn-outline-danger" type="submit">Delete Item</button>
+                <button class="btn btn-outline-danger" type="submit">Delete Budget</button>
                 </form></td>
         </tr>
         <% }); %>
