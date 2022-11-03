@@ -18,8 +18,7 @@
 <div class="container d-flex justify-content-center">
     <% budgets.budgetItem.forEach( item => { %>
     <div class="row bg-light">
-
-    <div class="col bg-light">
+        <div class="col bg-light">
         <h6>
             <td><%= item.itemName %></td>
             <div class="w-100"></div>
@@ -32,7 +31,7 @@
                 <button class="btn btn-outline-danger" type="submit">Delete Item</button>
             </form>
                 <% }) %>
-    </div>
+        </div>
     </div>
 </div>
 <hr>
@@ -41,23 +40,21 @@
     item.cost %>
    <% }) %>
    <%= budgets.amount - total %>
-    
 </div>
 
 <div class="container-fluid d-flex justify-content-center mt-3">
-<form  id="add-review-form" method="POST"  action="/budgets/<%=budgets._id %>/addItem">
-    <label>Item:
-    <input name="itemName" type="text" required="True">
-    </input> </label>
+    <form  id="add-review-form" method="POST"  action="/budgets/<%=budgets._id %>/addItem">
+        <label>Item:
+        <input name="itemName" type="text" required="True">
+        </input> </label>
     <br />
     <label>Category: <input type="text" name="category" required="True" /> </label >
     </br>
-    <label>Cost: <input type="number" name="cost" required="True"/></label>
+    <label>Cost($): <input type="number" name="cost" required="True"/></label>
     <br /><br />
     <button class="btn btn-outline-success mt-1" type="submit">Add Budget Item</button>
-</form>
+    </form>
 </div>
 
-    
-    <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>
     

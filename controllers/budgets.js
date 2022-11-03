@@ -25,7 +25,6 @@ function create(req, res) {
   const budget = new Budget(req.body);
   budget.save(function (err) {
     if (err) return res.render("budgets/");
-    console.log(budget);
     res.redirect("/budgets/index");
   });
 }
@@ -42,7 +41,6 @@ function addItem(req, res) {
   Budget.findById(req.params.id, function (err, budget) {
     budget.budgetItem.push(req.body);
     budget.save();
-    console.log(budget);
     res.redirect(`/budgets/${req.params.id}`);
   });
 }
@@ -52,15 +50,12 @@ function deleteItem(req, res) {
     let find = budget.budgetItem.findIndex(
       (object) => object._id == req.params.deleteItem
     );
-    console.log(find);
     budget.budgetItem.splice(find, 1);
     budget.save().then(res.redirect(`/budgets/${req.params.id}`));
   });
 }
 
 function deleteBudget(req, res) {
-  console.log(req.params.id);
-  console.log(Budget);
   Budget.findByIdAndDelete(req.params.id, function () {
     res.redirect("/budgets/index");
   });
