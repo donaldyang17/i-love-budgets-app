@@ -59,9 +59,10 @@ Budget items added.
 
 ---
 
-Simply follow this link to Heroku to run the app in any modern web browser.
+Simply follow this link to Heroku or GitHub to run the app in any modern web browser.
 
 [Heroku](https://i-love-budgets.herokuapp.com//)
+[GitHub](https://github.com/donaldyang17/i-love-budgets-app)
 
 ## Next Steps
 
